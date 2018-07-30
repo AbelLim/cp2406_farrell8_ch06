@@ -10,6 +10,7 @@ public class DebugSix4
       final int NUM = 5;
       Scanner input = new Scanner(System.in);
       // Prompt user to enter high and low values
+      count = 0;
       System.out.print("This application displays " + NUM +
          " random numbers" +
          "\nbetween the low and high values you enter" +
@@ -25,17 +26,17 @@ public class DebugSix4
          high = input.nextInt();
       }
 
-      while(count < low)
+      while(count < NUM)
       {
-         double result = Math.random();
+         double result = Math.random() * 10;
           // random() returns value between 0 and 1
-         int answer = (int) (result * 10 + low);
+         int answer = ((int)result + low);
           // multiply by 10 and add low -- random is at least the value of low
           // only use answer if it is low enough
-         if(answer <= low)
+         if(answer <= high)
          {
             System.out.print(answer + "  ");
-            ++count;
+            count++;
          }
       }
       System.out.println();
